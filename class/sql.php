@@ -17,14 +17,14 @@ class Sql extends PDO{
 		foreach($parameters as $key => $value){
 
 
-			$this->setParm($key, $value);
+			$this->setParam($statement, $key, $value);
 		}
 
 	}
 
 	private function setParam($statement, $key, $value){
 
-		$statement->bindParm($key, $value);
+		$statement->bindParam($key, $value);
 	}
 
 
@@ -44,7 +44,7 @@ class Sql extends PDO{
 
 
 
-	public function select($rawQuery, $params = array()):array{
+	public function select($rawQuery, $params = array()){
 
 		$stmt = $this->query($rawQuery, $params);
 

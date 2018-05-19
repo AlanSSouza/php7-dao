@@ -2,7 +2,7 @@
 
 require_once("config.php");
 
-$sql = new Sql();
+/*$sql = new Sql();
 
 $usuarios = $sql->select("SELECT *FROM tb_usuario");
 
@@ -15,7 +15,13 @@ foreach ($usuarios as $user) {
 
 	echo "============================================<br>";
 }
+*/
 
-echo json_encode($usuarios);
+$user = new Usuario();
+
+$user->loadById(5);
+
+echo $user;
+
 
 ?>
